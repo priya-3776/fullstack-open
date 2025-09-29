@@ -18,7 +18,6 @@ const courses = [
     ]
   }
 ]
-
 return (
   <div>
     {courses.map(course => (
