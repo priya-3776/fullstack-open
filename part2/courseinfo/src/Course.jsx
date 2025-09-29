@@ -1,18 +1,26 @@
 import React from 'react'
 
-const Course = ({ course }) => {
-  // Exercise 2.3: total exercises calculated using reduce
-  const total = course.parts.reduce((sum, part) => sum + part.exercises, 0);
+const Header = ({ name }) => <h2>{name}</h2>
 
+const Part = ({ part }) => (
+  <p>{part.name} {part.exercises}</p>
+)
+
+const Content = ({ parts }) => (
+  <div>
+    {parts.map(p => <Part key={p.id} part={p} />)}
+  </div>
+)
+
+const Course = ({ course }) => {
+  const total = course.parts.reduce((sum, part) => sum + part.exercises, 0)
   return (
     <div>
-      <h2>{course.name}</h2>
-      {course.parts.map(part => (
-        <p key={part.id}>{part.name} {part.exercises}</p>
-      ))}
+      <Header name={course.name} />
+      <Content parts={course.parts} />
       <p><strong>Total exercises: {total}</strong></p>
     </div>
   )
 }
 
-export default Course;
+export default Course
