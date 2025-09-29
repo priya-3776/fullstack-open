@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Course = ({ course }) => {
+  // Exercise 2.3: total exercises calculated using reduce
   const total = course.parts.reduce((sum, part) => sum + part.exercises, 0);
 
   return (
