@@ -9,13 +9,14 @@ const Part = ({ part }) => (
 
 const Content = ({ parts }) => (
   <div>
-    {parts.map(p => <Part key={p.id} part={p} />)}
+    {parts.map(part => <Part key={part.id} part={part} />)}
   </div>
 )
 
 // Main Course component
 const Course = ({ course }) => {
   const total = course.parts.reduce((sum, part) => sum + part.exercises, 0)
+
   return (
     <div>
       <Header name={course.name} />
