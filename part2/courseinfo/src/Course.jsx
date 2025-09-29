@@ -1,5 +1,6 @@
 import React from 'react'
 
+// Subcomponents
 const Header = ({ name }) => <h2>{name}</h2>
 
 const Part = ({ part }) => (
@@ -12,6 +13,7 @@ const Content = ({ parts }) => (
   </div>
 )
 
+// Main Course component
 const Course = ({ course }) => {
   const total = course.parts.reduce((sum, part) => sum + part.exercises, 0)
   return (
